@@ -1,5 +1,5 @@
 import { getBodies } from "./modules/api.js";
-import { displayPlanet, wrapperElem, overlayElem, planetInfoElem } from "./modules/display.js";
+import { displayPlanet, wrapperElem, overlayElem, planetInfoButton } from "./modules/display.js";
 
 const planetsElem = document.querySelectorAll('.planet');
 
@@ -11,8 +11,8 @@ for(let planetIndex = 0; planetIndex < planetsElem.length; planetIndex++) {
 };
 
 // Add click to planet in overlay to return to the startscreen
-planetInfoElem.addEventListener('click', () => {
-    planetInfoElem.classList = 'planet-image'
+planetInfoButton.addEventListener('click', () => {
+    planetInfoButton.classList = 'overlay-button sun'
     overlayElem.classList.add('hidden');
     wrapperElem.classList.remove('hidden');
 })  

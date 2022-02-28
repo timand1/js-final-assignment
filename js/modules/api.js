@@ -11,7 +11,6 @@ async function getAPI() {
     return data.key
 }
 
-
 async function getBodies() {
     const apiKey = await getAPI();
     const URL = BASE_URL + '/bodies';

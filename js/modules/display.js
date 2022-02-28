@@ -2,7 +2,7 @@
 
 const wrapperElem = document.querySelector('.wrapper');
 const overlayElem = document.querySelector('.overlay');
-const planetInfoElem = document.querySelector('.overlay--planets');
+const planetInfoButton = document.querySelector('.overlay-button');
 
 const headerPlanetElem = document.querySelector('.planet-description h1');
 const latinPlanetElem = document.querySelector('.planet-description h2');
@@ -16,7 +16,7 @@ const planetMoonsElem = document.querySelector('.info-header--moons');
 
 
 async function displayPlanet(i, planets) {
-    planetInfoElem.classList.add(planets[i].name);
+    planetInfoButton.classList.add(planets[i].name);
     headerPlanetElem.innerHTML = planets[i].name.toUpperCase();
     latinPlanetElem.innerHTML = planets[i].latinName.toUpperCase();
     planetDescElem.innerHTML = planets[i].desc;
@@ -33,4 +33,4 @@ async function displayPlanet(i, planets) {
  
 
 
-export { displayPlanet, wrapperElem, overlayElem, planetInfoElem } 
+export { displayPlanet, wrapperElem, overlayElem, planetInfoButton } 
