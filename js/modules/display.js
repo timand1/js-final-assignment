@@ -1,65 +1,36 @@
 /* Modul för att samla skapandet och displayandet av planeterna och dess information */
 
-const overlayElem = document.querySelector('.overlay');
 const wrapperElem = document.querySelector('.wrapper');
+const overlayElem = document.querySelector('.overlay');
+const planetInfoElem = document.querySelector('.overlay--planets');
+
+const headerPlanetElem = document.querySelector('.planet-description h1');
+const latinPlanetElem = document.querySelector('.planet-description h2');
+const planetDescElem = document.querySelector('.planet-description p');
+
+const planetCicumference = document.querySelector('.info-header--circumference');
+const planetDistanceElem = document.querySelector('.info-header--distance');
+const planetMaxTemp = document.querySelector('.info-header--max');
+const planetMinTemp = document.querySelector('.info-header--min');
+const planetMoonsElem = document.querySelector('.info-header--moons');
+
 
 async function displayPlanet(i, planets) {
-    const template = 
-    `
-    <section class="overlay--planets">    
-        <img class="planet-image ${planets[i].name}" src="/assets/sun.svg">
-        <img class="planet-image ${planets[i].name}" src="/assets/sun.svg">
-        <img class="planet-image ${planets[i].name}" src="/assets/sun.svg">
-        <p class="planet-back">Click on the planet to go back!</p>
-    </section>
-    <section class="overlay--text">
-        <article class="planet-description">
-            <h1>${planets[i].name.toUpperCase()}</h1>
-            <h2>${planets[i].latinName.toUpperCase()}</h2>
-            <p>${planets[i].desc}</p>
-        </article>
-        <article class="planet-info">
-            <article class="planet-info--subtext">
-                <span>
-                    <h3 class="info-header">OMKRETS</h3>
-                    <p>${planets[i].circumference} km</p>
-                </span>
-                <span>
-                    <h3 class="info-header">KM FRÅN SOLEN</h3>            
-                    <p>${planets[i].distance} km</p>
-                </span>
-            </article>
-            <article class="planet-info--subtext">
-                <span>
-                    <h3 class="info-header">MAX TEMPERATUR</h3>
-                    <p>${planets[i].temp.day} C</p>
-                </span>
-                <span>       
-                    <h3 class="info-header">MIN TEMPERATUR</h3>
-                    <p>${planets[i].temp.night} C</p>
-                </span>
-            </article>
-        </article>
-        <article class="planet-moons">
-        <h3 class="info-header info-header">MÅNAR</h3>
-        <p>${planets[i].moons.join(', ')}</p>
-        </article>
-    </section>`;
+    planetInfoElem.classList.add(planets[i].name);
+    headerPlanetElem.innerHTML = planets[i].name.toUpperCase();
+    latinPlanetElem.innerHTML = planets[i].latinName.toUpperCase();
+    planetDescElem.innerHTML = planets[i].desc;
+    planetCicumference.innerHTML = `${planets[i].circumference} km`;
+    planetDistanceElem.innerHTML = `${planets[i].distance} km`;
+    planetMaxTemp.innerHTML = `${planets[i].temp.day} C`;
+    planetMinTemp.innerHTML = `${planets[i].temp.night} C`;
+    planetMoonsElem.innerHTML = planets[i].moons.join(', ');
 
-    // Clear the overlay on each planet-click
-    while(overlayElem.firstChild) {
-        overlayElem.removeChild(overlayElem.firstChild)
-    }
-    overlayElem.insertAdjacentHTML('beforeend', template);
-    overlayElem.classList.toggle('hidden');
-    wrapperElem.classList.toggle('hidden');
+    overlayElem.classList.remove('hidden');
+    wrapperElem.classList.add('hidden');
 
-    const planetInfoElem = document.querySelector('.planet-image:first-child');
-    planetInfoElem.addEventListener('click', () => {
-        overlayElem.classList.toggle('hidden');
-        wrapperElem.classList.toggle('hidden');
-    })    
 };
+ 
 
 
-export { displayPlanet } 
+export { displayPlanet, wrapperElem, overlayElem, planetInfoElem } 

@@ -104,6 +104,12 @@ p {
     right: -1.5rem;
 }
 
+.overlay--planets {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .planet-image {
     position: absolute;
 }
@@ -129,17 +135,6 @@ p {
     opacity: 10%;
     width: 30vw;
     z-index: -100;
-}
-
-.planet-back {
-    color: #000;
-    position: absolute;
-    top: 50%;
-    left: -4vw;
-    transform: rotateZ(-90deg);
-    pointer-events: none;
-    z-index: 1;
-
 }
 
 .planet-description h1 {

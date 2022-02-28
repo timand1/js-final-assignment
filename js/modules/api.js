@@ -20,7 +20,7 @@ async function getBodies() {
         headers: {'x-zocom': apiKey }
     })
     const data = await response.json();
-    console.log(data.bodies)
+
     return data.bodies;
 }
 
