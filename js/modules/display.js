@@ -1,4 +1,7 @@
-/* Modul för att samla skapandet och displayandet av planeterna och dess information */
+/* 
+    Modul för att samla skapandet och displayandet av planeterna och deras information 
+    samt att visa overlayen där informationen ska visas
+*/
 
 const wrapperElem = document.querySelector('.wrapper');
 const overlayElem = document.querySelector('.overlay');

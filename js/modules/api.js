@@ -1,4 +1,7 @@
-/* Modul för att samla API kod på samma plats (API-key, fetch) */
+/* 
+    Modul för att samla API anropen och svar på samma plats (API-key, fetch), 
+    och returnera svaret i en array    
+*/
 
 const BASE_URL = 'https://fathomless-shelf-54969.herokuapp.com';
 
