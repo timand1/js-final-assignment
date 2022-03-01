@@ -17,6 +17,10 @@ h1, h2, h3 {
     font-family: 'Secular One', sans-serif;
 }
 
+h1, h3 {
+    font-weight: 400;
+}
+
 p {
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 300;
@@ -156,9 +160,10 @@ p {
 .overlay--planets::after {
     position: absolute;
     content: "Click on me to go back!";
+    font-size: 1.2rem;
     transform: rotateZ(-90deg);
     top: 50%;
-    left: -3rem;
+    left: -4rem;
     z-index: 10;
     color: #000;
     pointer-events: none;
