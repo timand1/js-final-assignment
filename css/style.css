@@ -63,7 +63,7 @@ p {
 .planet-solen {
     background-color: #FFD029;
     border: none;
-    border-radius: 100%;
+    border-radius: 50%;
     height: 90vh;
     width: 20vw;
     margin-top: 3rem;
@@ -101,7 +101,7 @@ p {
 
 .planet-saturnus {
     background-color: #C7AA72;
-    width: 6.5vw;
+    width: 10vw;
     position: relative;
 }
 
@@ -111,9 +111,9 @@ p {
     content: '';
     position: absolute;
     left: -20%;
-    background: #E7CDCD;
+    background: #e7cdcd81;
     width: 140%;
-    height: 0.2rem;
+    height: 0.4rem;
     border-radius: 50%;
     transform: rotateZ(-45deg);
 }
