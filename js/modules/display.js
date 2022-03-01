@@ -18,22 +18,23 @@ const planetMinTemp = document.querySelector('.info-header--min');
 const planetMoonsElem = document.querySelector('.info-header--moons');
 
 
-async function displayPlanet(i, planets) {
-    planetInfoButton.classList.add(planets[i].name);
-    headerPlanetElem.innerHTML = planets[i].name.toUpperCase();
-    latinPlanetElem.innerHTML = planets[i].latinName.toUpperCase();
-    planetDescElem.innerHTML = planets[i].desc;
-    planetCicumference.innerHTML = `${planets[i].circumference} km`;
-    planetDistanceElem.innerHTML = `${planets[i].distance} km`;
-    planetMaxTemp.innerHTML = `${planets[i].temp.day} C`;
-    planetMinTemp.innerHTML = `${planets[i].temp.night} C`;
-    planetMoonsElem.innerHTML = planets[i].moons.join(', ');
+function displayPlanet(planet) {
+    planetInfoButton.classList.add(planet.name);
+    headerPlanetElem.innerHTML = planet.name.toUpperCase();
+    latinPlanetElem.innerHTML = planet.latinName.toUpperCase();
+    planetDescElem.innerHTML = planet.desc;
 
+    planetCicumference.innerHTML = `${planet.circumference.toLocaleString()} km`;
+    planetDistanceElem.innerHTML = `${planet.distance.toLocaleString()} km`;
+    planetMaxTemp.innerHTML = `${planet.temp.day} C`;
+    planetMinTemp.innerHTML = `${planet.temp.night} C`;
+    if(planet.moons.length == 0) { 
+        planetMoonsElem.innerHTML = '-';
+    } else {    
+        planetMoonsElem.innerHTML = planet.moons.join(', ');
+    }
     overlayElem.classList.remove('hidden');
     wrapperElem.classList.add('hidden');
-
 };
- 
 
-
-export { displayPlanet, wrapperElem, overlayElem, planetInfoButton } 
+export { displayPlanet } 

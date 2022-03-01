@@ -13,23 +13,13 @@
             <h1 class="headline">SOLSYSTEMET</h1>
             <p class="sub-headline">SOLARIS</p>
         </header>    
-        <button class="planet sun"></button>
         <article class="planets">
-            <!-- <button class="sun" src="/assets/sun.svg" alt="the sun"></button> -->
-            <button class="planet planet-mercury"></button>
-            <button class="planet planet-venus"></button>
-            <button class="planet planet-tellus"></button>
-            <button class="planet planet-mars"></button>
-            <button class="planet planet-jupiter"></button>
-            <button class="planet planet-saturn"></button>
-            <button class="planet planet-uranus"></button>
-            <button class="planet planet-neptune"></button>
         </article>
-        </main>    
+        </main>        
     </div>
     <section class="overlay hidden">
         <section class="overlay--planets">    
-            <button class="overlay-button sun"></button>
+            <button class="overlay-button planet-solen"></button>
         </section>
         <section class="overlay--text">
             <article class="planet-description">
@@ -39,21 +29,21 @@
             </article>
             <article class="planet-info">
                 <article class="planet-info--subtext">
-                    <span>
+                    <span class="planet-info--subheader">
                         <h3 class="info-header">OMKRETS</h3>
                         <p class="info-header--circumference"></p>
                     </span>
-                    <span>
+                    <span class="planet-info--subheader">
                         <h3 class="info-header">KM FRÅN SOLEN</h3>            
                         <p class="info-header--distance"></p>
                     </span>
                 </article>
                 <article class="planet-info--subtext">
-                    <span>
+                    <span class="planet-info--subheader">
                         <h3 class="info-header">MAX TEMPERATUR</h3>
                         <p class="info-header--max"></p>
                     </span>
-                    <span>       
+                    <span class="planet-info--subheader">       
                         <h3 class="info-header">MIN TEMPERATUR</h3>
                         <p class="info-header--min"></p>
                     </span>
@@ -65,7 +55,6 @@
             </article>
         </section>
     </section>
-
     <script type="module" src="js/main.js"></script>
 </body>
 </html>

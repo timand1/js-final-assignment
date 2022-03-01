@@ -19,7 +19,7 @@ async function getBodies() {
     const URL = BASE_URL + '/bodies';
     const response = await fetch(URL, {
         method: 'GET',
-        headers: {'x-zocom': apiKey }
+        headers: { 'x-zocom': apiKey }
     })
     const data = await response.json();
 
