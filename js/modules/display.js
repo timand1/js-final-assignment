@@ -28,11 +28,13 @@ function displayPlanet(planet) {
     planetDistanceElem.innerHTML = `${planet.distance.toLocaleString()} km`;
     planetMaxTemp.innerHTML = `${planet.temp.day} C`;
     planetMinTemp.innerHTML = `${planet.temp.night} C`;
+
     if(planet.moons.length == 0) { 
         planetMoonsElem.innerHTML = '-';
     } else {    
         planetMoonsElem.innerHTML = planet.moons.join(', ');
     }
+    
     overlayElem.classList.remove('hidden');
     wrapperElem.classList.add('hidden');
 };

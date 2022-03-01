@@ -212,9 +212,11 @@ p {
     font-family: 'Lora', serif;
     letter-spacing: 14px;
 }
+
 .planet-description p {
     line-height: 36px;
 }
+
 .overlay--text {
     max-width: 800px;
     font-size: 18px;

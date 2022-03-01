@@ -1,3 +1,7 @@
+/* 
+    Main js-fil där allt samlas och knapp-eventen ligger här och hämtar upp funktionerna från de andra modulerna
+*/
+
 import { getBodies } from "./modules/api.js";
 import { displayPlanet } from "./modules/display.js";
 
@@ -6,7 +10,7 @@ const wrapperElem = document.querySelector('.wrapper');
 const overlayElem = document.querySelector('.overlay');
 const planetInfoButton = document.querySelector('.overlay-button');
 
-// Skapar upp alla planeter vid sidladdning
+// Create all planet on pageload
 createPlanets();
 
 async function createPlanets() {
@@ -17,6 +21,7 @@ async function createPlanets() {
         planetsContainer.appendChild(planetsElem);
         planetsElem.classList = `planet planet-${planet.name.toLowerCase()}`;
 
+        // Make each planet clickable
         planetsElem.addEventListener('click', async () => {
             displayPlanet(planet);
         })
