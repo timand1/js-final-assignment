@@ -5,7 +5,7 @@
 import { getBodies } from "./modules/api.js";
 import { displayPlanet } from "./modules/display.js";
 
-const planetsContainer = document.querySelector('.planets');
+const planetsElem = document.querySelector('.planets');
 const wrapperElem = document.querySelector('.wrapper');
 const overlayElem = document.querySelector('.overlay');
 const planetInfoButton = document.querySelector('.overlay-button');
@@ -17,12 +17,12 @@ async function createPlanets() {
     const planets = await getBodies();  
 
     for(const planet of planets) {
-        const planetsElem = document.createElement('button');   
-        planetsContainer.appendChild(planetsElem);
-        planetsElem.classList = `planet planet-${planet.name.toLowerCase()}`;
+        const planetButton = document.createElement('button');   
+        planetsElem.appendChild(planetButton);
+        planetButton.classList = `planet planet-${planet.name.toLowerCase()}`;
 
         // Make each planet clickable
-        planetsElem.addEventListener('click', async () => {
+        planetButton.addEventListener('click', async () => {
             displayPlanet(planet);
         })
     }

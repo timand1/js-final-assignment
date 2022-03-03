@@ -19,6 +19,7 @@ h1, h2, h3 {
 
 h1, h3 {
     font-weight: 400;
+    letter-spacing: 8px;
 }
 
 p {
@@ -36,7 +37,6 @@ p {
 
 .headline {
     font-size: 60px;
-    letter-spacing: 8px;
     margin-bottom: 0;
 }
 
@@ -70,7 +70,7 @@ p {
     border-radius: 50%;
     height: 90vh;
     width: 20vw;
-    margin-top: 3rem;
+    margin-top: 5vh;
     transform: translateX(-60%);
 }
 
@@ -136,6 +136,8 @@ p {
     box-shadow: 2px 2px 12px darkgray;
 }
 
+/* Overlay - planet information */
+
 .overlay {
     position: absolute;
     top: 0;
@@ -151,26 +153,10 @@ p {
     display: none;
 }
 
-.overlay--planets {
+.overlay-button {
     position: fixed;
     top: 0;
     left: 0;
-}
-
-.overlay--planets::after {
-    position: absolute;
-    content: "Click on me to go back!";
-    font-size: 1.2rem;
-    transform: rotateZ(-90deg);
-    top: 50%;
-    left: -4rem;
-    z-index: 10;
-    color: #000;
-    pointer-events: none;
-}
-
-.overlay-button {
-    position: relative;
     z-index: 1;
     cursor: pointer;
     transition: width 300ms ease-in-out;
@@ -206,52 +192,52 @@ p {
     width: 22vw;
 }
 
-.planet-description h1 {
+.planet-container {
+    max-width: 800px;
+    font-size: 18px;
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.planet-container--description {
+    margin: 0;
+}
+
+.planet-container--description h1 {
     font-size: 60px;
     margin: 0;
 }
 
-.planet-description h2 {
+.planet-container--description h2 {
     font-size: 24px;
     color: #FFD029;
     font-family: 'Lora', serif;
     letter-spacing: 14px;
 }
 
-.planet-description p {
+.planet-container--description p {
     line-height: 36px;
 }
 
-.overlay--text {
-    max-width: 800px;
-    font-size: 18px;
-    margin: 2rem 0;
-}
-
-.planet-info {
-    display: flex;
-    flex-direction: column;
+.planet-container--info {
+    flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
     font-size: 18px;
     border-top: 1px solid #ffffff2a;
     border-bottom: 1px solid #ffffff2a;
-    margin: 2rem 0;
 }
 
-.planet-info--subtext {
-    display: flex;
-    flex-direction: row;
+.planet-container--subheader {
+    width: 50%;
 }
 
-.planet-info--subheader {
-    flex: 1;
-}
-
-.info-header {
+.planet-subheader {
     letter-spacing: 5px;
 }
 
-/* Planets color in the overlay */
+/* Planet-button color in the overlay */
 .Merkurius {
     background: #888888;
 }
